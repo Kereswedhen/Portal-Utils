@@ -17,28 +17,44 @@ public final class PortalsCommand {
                 .then(Commands.literal("enable")
                         .then(Commands.literal("end")
                             .executes(context -> {
-                                PortalSettings.setEndEnabled(true);
-                                context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals <green>Enabled<reset>!");
+                                if (!PortalSettings.isEndEnabled()) {
+                                    PortalSettings.setEndEnabled(true);
+                                    context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals <green>Enabled!<reset>!");
+                                } else if (PortalSettings.isEndEnabled()) {
+                                    context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals are already <green>Enabled!<reset>!");
+                                }
                                 return Command.SINGLE_SUCCESS;
                             }))
                         .then(Commands.literal("nether")
                             .executes(context -> {
-                                PortalSettings.setNetherEnabled(true);
-                                context.getSource().getSender().sendRichMessage("<#723233>Nether<reset> Portals <green>Enabled<reset>!");
+                                if (!PortalSettings.isNetherEnabled()) {
+                                    PortalSettings.setNetherEnabled(true);
+                                    context.getSource().getSender().sendRichMessage("<#723233>Nether<reset> Portals <green>Enabled<reset>!");
+                                } else if (PortalSettings.isNetherEnabled()) {
+                                    context.getSource().getSender().sendRichMessage("<#723233>Nether<reset> Portals are already <green>Enabled<reset>!");
+                                }
                                 return Command.SINGLE_SUCCESS;
                             })))
 
                 .then(Commands.literal("disable")
                         .then(Commands.literal("end")
                                 .executes(context -> {
-                                    PortalSettings.setEndEnabled(false);
-                                    context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals <red>Disabled<reset>!");
+                                    if (PortalSettings.isEndEnabled()) {
+                                        PortalSettings.setEndEnabled(false);
+                                        context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals <red>Disabled<reset>!");
+                                    } else if (!PortalSettings.isEndEnabled()) {
+                                        context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals are already <red>Disabled<reset>!");
+                                    }
                                     return Command.SINGLE_SUCCESS;
                                 }))
                         .then(Commands.literal("nether")
                                 .executes(context -> {
-                                    PortalSettings.setNetherEnabled(false);
-                                    context.getSource().getSender().sendRichMessage("<#723233>Nether<reset> Portals <red>Disabled<reset>!");
+                                    if (PortalSettings.isNetherEnabled()) {
+                                        PortalSettings.setNetherEnabled(false);
+                                        context.getSource().getSender().sendRichMessage("<#723233>Nether<reset> Portals <red>Disabled<reset>!");
+                                    } else if (PortalSettings.isNetherEnabled()) {
+                                        context.getSource().getSender().sendRichMessage("<#723233>Nether<reset> Portals are already <red>Disabled<reset>!");
+                                    }
                                     return Command.SINGLE_SUCCESS;
                                 }))
                 );
