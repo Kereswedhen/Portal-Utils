@@ -9,16 +9,34 @@ public final class PortalsCommand {
 
     public static LiteralArgumentBuilder<CommandSourceStack> create() {
         return Commands.literal("portals")
+                .executes(context -> {
+                    context.getSource().getSender().sendRichMessage("<red><bold>incorrect Usage: <reset>/portals <#EEF5B4>end <reset>| <#723233>nether <reset><green><italic>enable <reset>|<red><italic> disable");
+                  return Command.SINGLE_SUCCESS;
+                })
                 .then(Commands.literal("enable")
-                        .executes(context -> {
-                            context.getSource().getSender().sendMessage("Portals have been enabled!");
-                            return Command.SINGLE_SUCCESS;
-                        }))
+                        .then(Commands.literal("end")
+                            .executes(context -> {
+                                context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals <red>Disabled<reset>!");
+                                return Command.SINGLE_SUCCESS;
+                            }))
+                        .then(Commands.literal("nether")
+                            .executes(context -> {
+                                context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals <green>Enabled<reset>!");
+                                return Command.SINGLE_SUCCESS;
+                            }))
+                )
                 .then(Commands.literal("disable")
-                        .executes(context -> {
-                            context.getSource().getSender().sendMessage("Portals have been disabled!");
-                            return Command.SINGLE_SUCCESS;
-                        }));
+                        .then(Commands.literal("end")
+                                .executes(context -> {
+                                context.getSource().getSender().sendRichMessage("<#723233>Nether<reset> Portals <red>Disabled<reset>!");
+                                    return Command.SINGLE_SUCCESS;
+                                }))
+                        .then(Commands.literal("nether")
+                                .executes(context -> {
+                                context.getSource().getSender().sendRichMessage("<#723233>Nether<reset> Portals <green>Enabled<reset>!");
+                                    return Command.SINGLE_SUCCESS;
+                                }))
+                );
     }
 }
 
