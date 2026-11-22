@@ -1,15 +1,14 @@
 package me.kereswedhen.portalutils;
 
-import io.papermc.paper.plugin.lifecycle.event.types.LifecycleEvents;
+import me.kereswedhen.portalutils.listeners.PortalListener;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class PortalUtils extends JavaPlugin {
 
     @Override
     public void onEnable() {
-        // Plugin startup logic
+        getServer().getPluginManager().registerEvents(new PortalListener(), this);
         getLogger().info(this + " is enabled!");
-        // Register Commands
     }
 
     @Override
