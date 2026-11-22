@@ -1,26 +1,25 @@
 package me.kereswedhen.portalutils.commands;
 
 import com.mojang.brigadier.Command;
-import com.mojang.brigadier.arguments.BoolArgumentType;
+import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import com.mojang.brigadier.tree.LiteralCommandNode;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;
-import org.bukkit.command.CommandSender;
 
 public class PortalsCommand {
 
-    public static LiteralCommandNode<CommandSourceStack> createCommand(final String commandName) {
-        return Commands.literal(commandName)
-                .then(Commands.argument("disable", BoolArgumentType.bool())
-                        .executes(context -> {
-                            final BoolArgumentType bool = context.getArgument("disable", BoolArgumentType.class);
-                            final CommandSender sender = context.getSource().getSender();;
+    LiteralArgumentBuilder<CommandSourceStack> command = Commands.literal("portals")
+           .then(Commands.literal("enable")
+                   .executes(context -> {
+                       context.getSource().getSender().sendMessage("<rainbow> Portals have been enabled!");
 
-                            sender.sendRichMessage("<rainbow:!>Portals are now " + bool);
+                       return Command.SINGLE_SUCCESS;
+                   }))
+           .then(Commands.literal("disable")
+                   .executes(context -> {
+                       context.getSource().getSender().sendMessage("<rainbow> Portals have been disabled!");
 
-                            return Command.SINGLE_SUCCESS;
-                        }))
-                .build();
-    }
-
+                       return Command.SINGLE_SUCCESS;
+                   }));
 }
+
