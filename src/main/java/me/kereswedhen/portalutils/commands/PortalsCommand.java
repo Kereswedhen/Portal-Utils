@@ -10,6 +10,7 @@ public final class PortalsCommand {
 
     public static LiteralArgumentBuilder<CommandSourceStack> create() {
         return Commands.literal("portals")
+                .requires(source -> source.getSender().isOp())
                 .executes(context -> {
                     context.getSource().getSender().sendRichMessage("<#993233><italic>Nether<reset> Enabled: " + PortalSettings.isNetherEnabled());
                     context.getSource().getSender().sendRichMessage("<#EEF5B4><italic>End<reset> Enabled: " + PortalSettings.isEndEnabled());
