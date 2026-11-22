@@ -8,11 +8,8 @@ public final class PortalUtils extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-        getLogger().info( this + " is enabled!");
+        getLogger().info(this + " is enabled!");
         // Register Commands
-        this.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, event -> {
-            event.registrar().register();
-        });
     }
 
     @Override
