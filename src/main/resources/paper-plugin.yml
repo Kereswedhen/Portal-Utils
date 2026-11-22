@@ -1,0 +1,10 @@
+name: Portal-Utils
+version: '${version}'
+
+main: me.kereswedhen.portalutils.PortalUtils
+bootstrapper: me.kereswedhen.portalutils.PortalUtilsBootstrap
+loader: me.kereswedhen.portalutils.PortalUtilsLoader
+api-version: '26.3'
+load: POSTWORLD
+
+authors: [ Kereswedhen ]
