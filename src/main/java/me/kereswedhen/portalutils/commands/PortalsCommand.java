@@ -11,7 +11,9 @@ public final class PortalsCommand {
     public static LiteralArgumentBuilder<CommandSourceStack> create() {
         return Commands.literal("portals")
                 .executes(context -> {
-                    context.getSource().getSender().sendRichMessage("<red><bold>incorrect Usage: <reset>/portals <#EEF5B4><italic>end <reset>| <#723233><italic>nether <reset><green><italic>enable <reset>|<red><italic> disable");
+                    context.getSource().getSender().sendRichMessage("<#723233><italic>Nether<reset> Enabled: " + PortalSettings.isNetherEnabled());
+                    context.getSource().getSender().sendRichMessage("<#EEF5B4><italic>End<reset> Enabled: " + PortalSettings.isEndEnabled());
+                    context.getSource().getSender().sendRichMessage("<red><bold>To disable/enable: <reset>/portals <#EEF5B4><italic>end <reset>| <#723233><italic>nether <reset><green><italic>enable <reset>|<red><italic> disable");
                   return Command.SINGLE_SUCCESS;
                 })
                 .then(Commands.literal("enable")
