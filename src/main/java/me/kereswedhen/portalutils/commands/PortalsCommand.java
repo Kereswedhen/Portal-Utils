@@ -5,6 +5,8 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;
 import me.kereswedhen.portalutils.PortalSettings;
+import net.kyori.adventure.key.Key;
+import net.kyori.adventure.sound.Sound;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
@@ -30,6 +32,7 @@ public final class PortalsCommand {
                                     final Component endPortalsEnabledSubtitle = Component.text("<bold>Has been <reset><obf>||<reset> <green><bold>ENABLED!<reset><obf> ||");
                                     final Title endPortalsEnabled = Title.title(endPortalsEnabledTitle, endPortalsEnabledSubtitle);
                                     Bukkit.getServer().showTitle(endPortalsEnabled);
+                                    Bukkit.getServer().playSound(Sound.sound(Key.key("block.end_portal.spawn"), Sound.Source.MASTER, 1F, 1F),  Sound.Emitter.self());
                                     // Feedback
                                     context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals <green>Enabled!<reset>");
                                 } else if (PortalSettings.isEndEnabled()) {
