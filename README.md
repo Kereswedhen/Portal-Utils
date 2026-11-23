@@ -15,6 +15,22 @@ Commands can only be run by server operators.
 | `/portals disable end` | Disables End portals if currently enabled and sends confirmation to the sender. |
 | `/portals disable nether` | Disables Nether portals if currently enabled and sends confirmation to the sender. |
 
+## Building from source
+Portal Utils uses Maven to handle dependencies.
+
+#### Requirements
+- Java 25 SDK
+- Git
+
+#### Compiling
+```sh
+git clone https://github.com/Kereswedhen/Portal-Utils
+cd Portal-Utils
+mvn clean package
+```
+
+Builds are found in the `target` folder.
+
 ## Contributing
 #### Pull requests
 
@@ -23,3 +39,6 @@ If you wish to update the plugin with features or bug fixes you believe to be be
 #### Issues
 
 If you encounter any bugs or other problems with the plugin, please do not hesitate to open an issue. We will try our best to address it promptly.
+
+[![Report Bug](https://badgen.net/badge/%20/Report%20Bug/red?icon=openbugbounty)](https://github.com/Kereswedhen/Portal-Utils/issues/new?title=%5BBug%5D%3A+&labels=bug)
+[![Report Bug](https://badgen.net/badge/%20/Request%20Feature/blue?icon=github)](https://github.com/Kereswedhen/Portal-Utils/issues/new?title=%5BFeature%5D%3A+&labels=enhancement)
