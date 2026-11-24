@@ -7,6 +7,7 @@ public final class PortalUtils extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Plugin startup logic
         getServer().getPluginManager().registerEvents(new PortalListener(), this);
         getLogger().info(this + " is enabled!");
     }

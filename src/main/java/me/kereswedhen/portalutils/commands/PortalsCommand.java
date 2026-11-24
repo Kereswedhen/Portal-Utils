@@ -8,6 +8,7 @@ import me.kereswedhen.portalutils.PortalSettings;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.sound.Sound;
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.minimessage.MiniMessage;
 import net.kyori.adventure.title.Title;
 import org.bukkit.Bukkit;
 
@@ -28,10 +29,11 @@ public final class PortalsCommand {
                                 if (!PortalSettings.isEndEnabled()) {
                                     PortalSettings.setEndEnabled(true);
                                     // Title logic :D
-                                    final Component endPortalsEnabledTitle = Component.text("<gradient:#8F648F:#EEF5B4><BOLD>THE <bold>END");
-                                    final Component endPortalsEnabledSubtitle = Component.text("<bold>Has been <reset><obf>||<reset> <green><bold>ENABLED!<reset><obf> ||");
-                                    final Title endPortalsEnabled = Title.title(endPortalsEnabledTitle, endPortalsEnabledSubtitle);
-                                    Bukkit.getServer().showTitle(endPortalsEnabled);
+                                    final Component endPortalsEnabledMainTitle = MiniMessage.miniMessage().deserialize("<bold><gradient:#8F648F:#EEF5B4>THE END");
+                                    final Component endPortalsEnabledSubtitle = MiniMessage.miniMessage().deserialize("<bold>Has been <reset><obf>||<reset> <green><bold>ENABLED!<reset><obf> ||");
+                                    final Title endPortalsEnabledTitle = Title.title(endPortalsEnabledMainTitle, endPortalsEnabledSubtitle);
+
+                                    Bukkit.getServer().showTitle(endPortalsEnabledTitle);
                                     Bukkit.getServer().playSound(Sound.sound(Key.key("block.end_portal.spawn"), Sound.Source.MASTER, 1F, 1F),  Sound.Emitter.self());
                                     // Feedback
                                     context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals <green>Enabled!<reset>");
@@ -45,11 +47,13 @@ public final class PortalsCommand {
                                 if (!PortalSettings.isNetherEnabled()) {
                                     PortalSettings.setNetherEnabled(true);
                                     // Title logic :D
-                                    final Component netherPortalsEnabledTitle = Component.text("<gradient:#B72D34:#3D1975><BOLD>THE <bold>NETHER");
-                                    final Component netherPortalsEnabledSubtitle = Component.text("<bold>Has been <reset><obf>||<reset> <green><bold>ENABLED!<reset><obf> ||");
+                                    final Component netherPortalsEnabledTitle = MiniMessage.miniMessage().deserialize("<gradient:#B72D34:#3D1975><BOLD>THE NETHER");
+                                    final Component netherPortalsEnabledSubtitle = MiniMessage.miniMessage().deserialize("<bold>Has been <reset><obf>||<reset> <green><bold>ENABLED!<reset><obf> ||");
                                     final Title netherPortalsEnabled = Title.title(netherPortalsEnabledTitle, netherPortalsEnabledSubtitle);
+
                                     Bukkit.getServer().showTitle(netherPortalsEnabled);
                                     context.getSource().getSender().sendRichMessage("<#993233>Nether<reset> Portals <green>Enabled!<reset>");
+                                    // Feedback
                                 } else if (PortalSettings.isNetherEnabled()) {
                                     context.getSource().getSender().sendRichMessage("<#993233>Nether<reset> Portals are already <green>Enabled!<reset>");
                                 }
