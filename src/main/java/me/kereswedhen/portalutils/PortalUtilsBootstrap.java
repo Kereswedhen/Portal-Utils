@@ -9,12 +9,13 @@ class PortalUtilsBootstrap implements PluginBootstrap {
 
     @Override
     public void bootstrap(final BootstrapContext context) {
-        context.getLifecycleManager().registerEventHandler(
-                LifecycleEvents.COMMANDS,
-                event -> event.registrar().register(
-                        PortalsCommand.create().build(),
-                        "Enable or disable portals"
-                )
+        context.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, event -> event.registrar().register(
+                PortalsCommand.create().build(), "Enable or disable portals")
         );
+        /*
+        context.getLifecycleManager().registerEventHandler(LifecycleEvents.COMMANDS, event -> event.registrar().register(
+                CommandClass.create().build(), "Description")
+        );
+        */
     }
 }

@@ -5,6 +5,7 @@ import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import io.papermc.paper.command.brigadier.CommandSourceStack;
 import io.papermc.paper.command.brigadier.Commands;
 import me.kereswedhen.portalutils.PortalSettings;
+import me.kereswedhen.portalutils.PortalUtils;
 import net.kyori.adventure.key.Key;
 import net.kyori.adventure.sound.Sound;
 import net.kyori.adventure.text.Component;
@@ -34,7 +35,11 @@ public final class PortalsCommand {
                                     final Title endPortalsEnabledTitle = Title.title(endPortalsEnabledMainTitle, endPortalsEnabledSubtitle);
 
                                     Bukkit.getServer().showTitle(endPortalsEnabledTitle);
-                                    Bukkit.getServer().playSound(Sound.sound(Key.key("block.end_portal.spawn"), Sound.Source.MASTER, 1F, 1F),  Sound.Emitter.self());
+                                    // Sounds
+                                    Bukkit.getServer().playSound(Sound.sound(Key.key("event.mob_effect.trial_omen" ), Sound.Source.MASTER, 1.0f, 1.0f), Sound.Emitter.self());
+                                    Bukkit.getServer().getScheduler().runTaskLater(PortalUtils.getPlugin(PortalUtils.class), () ->
+                                                    Bukkit.getServer().playSound(Sound.sound(Key.key("block.sculk_catalyst.bloom"), Sound.Source.MASTER, 1F, 1F), Sound.Emitter.self()),
+                                            20L);
                                     // Feedback
                                     context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals <green>Enabled!<reset>");
                                 } else if (PortalSettings.isEndEnabled()) {
@@ -52,6 +57,11 @@ public final class PortalsCommand {
                                     final Title netherPortalsEnabled = Title.title(netherPortalsEnabledTitle, netherPortalsEnabledSubtitle);
 
                                     Bukkit.getServer().showTitle(netherPortalsEnabled);
+                                    // Sounds
+                                    Bukkit.getServer().playSound(Sound.sound(Key.key("event.mob_effect.trial_omen" ), Sound.Source.MASTER, 1.0f, 1.0f), Sound.Emitter.self());
+                                    Bukkit.getServer().getScheduler().runTaskLater(PortalUtils.getPlugin(PortalUtils.class), () ->
+                                            Bukkit.getServer().playSound(Sound.sound(Key.key("block.respawn_anchor.set_spawn"), Sound.Source.MASTER, 1F, 1F), Sound.Emitter.self()),
+                                            20L);
                                     context.getSource().getSender().sendRichMessage("<#993233>Nether<reset> Portals <green>Enabled!<reset>");
                                     // Feedback
                                 } else if (PortalSettings.isNetherEnabled()) {
