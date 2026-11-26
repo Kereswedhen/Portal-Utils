@@ -9,11 +9,11 @@ Interaction with the plugin is done through Brigadier commands.
 Commands can only be run by server operators.
 | Command | Action |
 | :--- | :--- |
-| `/portals` | Shows current Nether and End portal enabled/disabled status and prints a usage message for the following commands. |
-| `/portals enable end` | Enables End portals if currently disabled, broadcasts a title/subtitle to all players, plays the End portal spawn sound, and sends confirmation to the sender. |
-| `/portals enable nether` | Enables Nether portals if currently disabled, broadcasts a title/subtitle to all players, and sends confirmation to the sender. |
-| `/portals disable end` | Disables End portals if currently enabled and sends confirmation to the sender. |
-| `/portals disable nether` | Disables Nether portals if currently enabled and sends confirmation to the sender. |
+| /portals | Shows current Nether and End portal enabled/disabled status and prints a usage message for the following commands. |
+| /portals enable end | Enables End portals if currently disabled, broadcasts a title/subtitle to all players, plays the End portal spawn sound, and sends confirmation to the sender. |
+| /portals enable nether | Enables Nether portals if currently disabled, broadcasts a title/subtitle to all players, and sends confirmation to the sender. |
+| /portals disable end | Disables End portals if currently enabled and sends confirmation to the sender. |
+| /portals disable nether | Disables Nether portals if currently enabled and sends confirmation to the sender. |
 
 ## Building from source
 Portal Utils uses Maven to handle dependencies.
