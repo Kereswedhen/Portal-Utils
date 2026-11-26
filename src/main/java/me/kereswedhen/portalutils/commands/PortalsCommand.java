@@ -38,7 +38,7 @@ public final class PortalsCommand {
                                     // Sounds
                                     Bukkit.getServer().playSound(Sound.sound(Key.key("event.mob_effect.trial_omen" ), Sound.Source.MASTER, 1.0f, 1.0f), Sound.Emitter.self());
                                     Bukkit.getServer().getScheduler().runTaskLater(PortalUtils.getPlugin(PortalUtils.class), () ->
-                                                    Bukkit.getServer().playSound(Sound.sound(Key.key("block.sculk_catalyst.bloom"), Sound.Source.MASTER, 1F, 1F), Sound.Emitter.self()),
+                                                    Bukkit.getServer().playSound(Sound.sound(Key.key("entity.warden.nearby_closer"), Sound.Source.MASTER, 1F, 1F), Sound.Emitter.self()),
                                             20L);
                                     // Feedback
                                     context.getSource().getSender().sendRichMessage("<#EEF5B4>End<reset> Portals <green>Enabled!<reset>");
