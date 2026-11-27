@@ -1,5 +1,8 @@
 # Portal Utils
-![Platform](https://badgen.net/badge/version/Paper%2026.3/orange) ![Languages](https://badgen.net/badge/language/Java/red) ![License](https://badgen.net/badge/license/GNU%20GPLv3/red)
+![Modrinth Game Versions](https://img.shields.io/modrinth/game-versions/portal-utils?style=for-the-badge&logo=modrinth) ![Language](https://img.shields.io/badge/Language-java-red?style=for-the-badge)
+ ![Static Badge](https://img.shields.io/badge/w-GNU_GPLv3-red?style=for-the-badge&label=liscense)
+
+![Modrinth Downloads](https://img.shields.io/modrinth/dt/portal-utils?style=for-the-badge&logo=modrinth)
 
 A simple utility plugin to control access to nether/end portals on PaperMC servers.
 
