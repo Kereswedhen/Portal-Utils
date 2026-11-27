@@ -41,5 +41,6 @@ If you wish to update the plugin with features or bug fixes you believe to be be
 
 If you encounter any bugs or other problems with the plugin, please do not hesitate to open an issue. We will try our best to address it promptly.
 
-[![Report Bug](https://badgen.net/badge/%20/Report%20Bug/red?icon=openbugbounty)](https://github.com/Kereswedhen/Portal-Utils/issues/new?title=%5BBug%5D%3A+&labels=bug)
-[![Report Bug](https://badgen.net/badge/%20/Request%20Feature/blue?icon=github)](https://github.com/Kereswedhen/Portal-Utils/issues/new?title=%5BFeature%5D%3A+&labels=enhancement)
+![Reprot Bug](https://img.shields.io/badge/w-Report_Bug-blue?style=for-the-badge&logo=openbugbounty&label=%E2%80%8D&link=https%3A%2F%2Fgithub.com%2FKereswedhen%2FPortal-Utils%2Fissues%2Fnew%3Ftitle%3D%255BBug%255D%253A%2B%26labels%3Dbug)
+![Request Feature](https://img.shields.io/badge/w-Request_Feature-blue?style=for-the-badge&logo=github&label=%E2%80%8D&link=https%3A%2F%2Fgithub.com%2FKereswedhen%2FPortal-Utils%2Fissues%2Fnew%3Ftitle%3D%255BFeature%255D%253A%2B%26labels%3Denhancement)
+
